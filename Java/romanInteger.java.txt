@@ -1,0 +1,50 @@
+package BigOh;
+
+public class romanInteger 
+
+{
+	private static int getMap(char ch){
+        if(ch=='I') return 1;
+        else if(ch=='V') return 5;
+        else if(ch=='X') return 10;
+        else if(ch=='L') return 50;
+        else if(ch=='C') return 100;
+        else if(ch=='D') return 500;
+        return 1000;
+    }
+	
+	
+	
+	 static int convertInteger(String s) {
+        int sum = 0;
+        int n = s.length();
+        int i=0;
+        while(i<n){
+            char ch = s.charAt(i);
+            if(i<n && i+1<n && s.charAt(i)=='I' && (s.charAt(i+1)=='X' || s.charAt(i+1)=='V') ){
+                sum+= getMap(s.charAt(i+1))-getMap(s.charAt(i));
+                i+=2;
+            }
+            else if(i<n && i+1<n && s.charAt(i)=='X' && (s.charAt(i+1)=='L' || s.charAt(i+1)=='C')){
+                sum+= getMap(s.charAt(i+1))-getMap(s.charAt(i));
+                i+=2;
+            }
+            else if(i<n && i+1<n && s.charAt(i)=='C' && (s.charAt(i+1)=='D' || s.charAt(i+1)=='M')){
+                sum+= getMap(s.charAt(i+1))-getMap(s.charAt(i));
+                i+=2;
+            }
+            else{
+                if(i>=n) break;
+                sum+=getMap(s.charAt(i));
+                i++;
+            }
+        }
+        return sum;
+    }
+  
+	
+	public static void main(String[] args) {
+		System.out.println(convertInteger("XXXVVV"));
+	}
+
+}
