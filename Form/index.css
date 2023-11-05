@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(86, 206, 206);
+}
+
+.heading{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+form{
+    background-color: white;
+    width: 35%;
+    margin-left: 32vw;
+}
+
+.form-elements{
+    margin-left: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.foem-elements label{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.form-elements input{
+    width: 74%;
+    line-height: 20px;
+    margin-top: 10px;
+    padding-left: 2%;
+    margin-bottom: 15px;
+}
+
+.country select{
+    width: 76%;
+    margin-top: 10px;
+    padding-left: 2%;
+    margin-bottom: 15px;
+    height: 30px;
+}
+
+.gender{
+    margin-top: 1%;
+}
+.gender p{
+    margin-bottom: 10px;
+}
+.gender input{
+    width: 5%;
+    margin-top: 1px;
+}
+
+button{
+    width: 76%;
+    height: 35px;
+    padding: 2%;
+    margin-left: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 166, 0);
+    border: none;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#required-field{
+    color:red;
+}
+
+.error-message{
+    color: red;
+}
+
+.display-elements{
+    height: 40vh;
+    width: 35vw;
+    margin-left: 32%;
+    margin-top: 2%;
+    border: 2px solid black;
+    display: none;
+}
+
+#popup{
+    height: 40vh;
+    width: 35vw;
+    margin-left: 32%;
+    margin-top: 2%;
+    border: 2px solid black;
+    margin-bottom: 2%;
+    background-color: white;
+    padding-top: 12px;
+}
+
+.display-fields{
+    margin-top: 6px;
+    margin-left: 5%;
+}
+
+#popup{
+    display: none;
+}
+
+.close-popup{
+    width: 25%;
+    background: red;
+    margin-left: 70%;
+}

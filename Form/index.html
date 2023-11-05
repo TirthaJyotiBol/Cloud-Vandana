@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="heading">
+        <h1> Customer Survey Form </h1>
+    </div>
+
+    <div class="display-elements">
+        <button>close</button>
+        <p id="fname-display">
+            First Name :
+        </p>
+        <p id="lname-display">
+            Last Name :
+        </p>
+        <p id="email-display">
+            Email :
+        </p>
+        <p id="dob-display">
+            Date of Birth :
+        </p>
+        <p id="countries-dislay">
+            Country :
+        </p>
+        <p id="profession-display">
+            Profession :
+        </p>
+        <p id="mobile-display">
+            Mobile : 
+        </p>
+
+    </div>
+
+
+    <form id="form">
+
+        <div class="form-elements">
+
+            <div class="f-name">
+                <label for="name">First Name</label> <span id="required-field">*</span> <br>
+                <span class="error-message" id="name-error"></span>
+                <input type="text" name="name" id="f-name" placeholder="Enter the First Name">
+            </div>
+
+            <div class="l-name">
+                <label for="name">Last Name</label> <span id="required-field">*</span>
+                <br>
+                <span class="error-message" id="l-name-error"></span>
+                <input type="text" name="name" id="l-name" placeholder="Enter the last Name" >
+            </div>
+    
+            <div class="email">
+                <label for="email">Email</label>
+                 <span id="required-field">*</span> 
+                 <span class="error-message" id="email-error"></span> 
+                 <br>
+               <input type="email" name="email" id="email" placeholder="Enter the Email">
+            </div>
+
+            <div class="date-of-birth">
+                <label for="dob">Date of Birth</label> 
+                <span id="required-field">*</span> 
+                <span class="error-message" id="dob-error"></span> 
+                 <br>
+                <input type="date" name="dob" id="dob">
+            </div>
+
+            <div class="country">
+                <label for="countries">choose country</label> <span id="required-field">*</span> 
+                <span class="error-message" id="country-error"></span>
+                <br>
+                <select name="countries" id="countries">
+                    <option value="" checked selected>Select Country</option>
+                    <option value="India">India</option>
+                    <option value="Australia">Australia</option>
+                    <option value="usa">United States of America</option>
+                    <option value="new-zealand">New Zealand</option>
+                  </select>
+            </div>
+
+            <!--
+                 I think it should be radio button 
+                but since check box is asked so its made check-box
+            -->
+            <div class="gender">
+                <p>Gender 
+                    <span id="required-field">*</span>
+                    <span class="error-message" id="gender-error"></span>
+                </p>
+                
+                <input class="checkbox" type="checkbox" name="gender" value="male" id="male"> 
+                <label for="male">Male</label> <br>
+
+                <input class="checkbox" type="checkbox" name="gender" value="female"  id="female"> 
+                <label for="female">Female</label> <br>
+
+                <input class="checkbox" type="checkbox" name="gender" value="others"  id="others">
+                <label for="female">others</label>
+            </div>
+
+            <div class="profession">
+                <label for="profession">Profession</label>
+                <span id="required-field">*</span> 
+                <span class="error-message" id="profession-error"></span>
+                <br>
+                <input type="text" name="profession" id="profession-input" placeholder="Enter Your Profession">
+            </div>
+
+            <div class="mobile-number">
+                <label for="mobile">Mobile Number</label> <span id="required-field">*</span> 
+                <span class="error-message" id="mobile-error"></span>
+                <br>
+                <input type="tel" name="mobile" id="mobile-input" placeholder="Enter Your Mobile Number">
+            </div>
+
+            <div class="buttons">
+                <button id="submit" type="submit">Submit</button> <br>
+                <button id="reset-btn" type="reset">Reset</button>
+            </div>
+
+        </div>
+    </form>
+
+    <div id="popup">
+        <p id="name-op" class="display-fields">  </p>
+        <p id="l-name-op" class="display-fields"> </p>
+        <p id="email-op" class="display-fields"></p>
+        <p id="Country-op" class="display-fields">  </p>
+        <p id="profession-op" class="display-fields"> </p>
+        <p id="Mobile-op" class="display-fields"> </p>
+        <p id="Gender-op" class="display-fields"> </p>
+        <button id="reset-btn2" onclick="reset()" type="reset" class="close-popup display-fields">
+            close popup
+        </button>
+    </div>
+
+
+
+</body>
+<script src="/index.js"></script>
+</html>
+
+
+
+
+<!--
+     B. Create a survey form with Fields; First Name, Last Name, Date of Birth, Country (dropdown),
+Gender (checkbox), Profession, email, and mobile number. All the input fields are
+necessary to submit the form. Create two buttons Submit and Reset. Reset will reset the
+form while clicking on submit, first, it will check all the fields and necessary validations and
+then a popup will appear displaying all the selected values with the label in front of it. On
+closing the popup, the form should reset all the values. Use the following for reference
+     
+        
+-->
