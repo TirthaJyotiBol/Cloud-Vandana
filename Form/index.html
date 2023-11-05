@@ -11,33 +11,6 @@
         <h1> Customer Survey Form </h1>
     </div>
 
-    <div class="display-elements">
-        <button>close</button>
-        <p id="fname-display">
-            First Name :
-        </p>
-        <p id="lname-display">
-            Last Name :
-        </p>
-        <p id="email-display">
-            Email :
-        </p>
-        <p id="dob-display">
-            Date of Birth :
-        </p>
-        <p id="countries-dislay">
-            Country :
-        </p>
-        <p id="profession-display">
-            Profession :
-        </p>
-        <p id="mobile-display">
-            Mobile : 
-        </p>
-
-    </div>
-
-
     <form id="form">
 
         <div class="form-elements">
@@ -127,6 +100,10 @@
         </div>
     </form>
 
+    <!-- 
+        on clicking over the submit button the pop-up would appear
+        displaying the values the user gave
+     -->
     <div id="popup">
         <p id="name-op" class="display-fields">  </p>
         <p id="l-name-op" class="display-fields"> </p>
@@ -135,6 +112,11 @@
         <p id="profession-op" class="display-fields"> </p>
         <p id="Mobile-op" class="display-fields"> </p>
         <p id="Gender-op" class="display-fields"> </p>
+
+        <!-- 
+            on clicking over the reset button the pop up would be invisible
+            also the form would reload
+         -->
         <button id="reset-btn2" onclick="reset()" type="reset" class="close-popup display-fields">
             close popup
         </button>
@@ -145,17 +127,3 @@
 </body>
 <script src="/index.js"></script>
 </html>
-
-
-
-
-<!--
-     B. Create a survey form with Fields; First Name, Last Name, Date of Birth, Country (dropdown),
-Gender (checkbox), Profession, email, and mobile number. All the input fields are
-necessary to submit the form. Create two buttons Submit and Reset. Reset will reset the
-form while clicking on submit, first, it will check all the fields and necessary validations and
-then a popup will appear displaying all the selected values with the label in front of it. On
-closing the popup, the form should reset all the values. Use the following for reference
-     
-        
--->
