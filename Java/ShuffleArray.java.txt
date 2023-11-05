@@ -1,13 +1,23 @@
 package BigOh;
+
+
+// The Algorithm used is to get the next permutaiton of the array
+// Since permutation makes all the possibilities of the shuffle
+// After permutation is found reverse the array to a certain index to look good
+
 public class ShuffleArray {
 	
+	// due to abstraction its been declared private such that no other class directly cannot us the array
 	private int[]arr;
 	
+	// on the constructor
+	// array of certain length is created also the inputs are set
 	ShuffleArray(int n){
 		arr = new int[n];
 		setInputs();
 	}
 	
+	// its the main code for shuffling
 	void shuffle() {
 		int i = arr.length-2;
 		while(i>=0 && arr[i]>=arr[i+1]) {
@@ -26,12 +36,15 @@ public class ShuffleArray {
 		reverse(arr,0,(10+arr.length)%(arr.length));
 	}
 	
+	
+	// set inputs
 	private void setInputs() {
 		for(int i=0;i<arr.length;i++) {
 			arr[i] = i+1;
 		}
 	}
 	
+	// Print the array
 	void printArray() {
 		for(int i=0;i<this.arr.length;i++) {
 			System.out.print(arr[i]+" ");
@@ -39,7 +52,7 @@ public class ShuffleArray {
 		System.out.println();
 	}
 	
-	
+	// reverse from point i to point j
 	private void reverse(int[]arr,int i,int j) {
 		while(i<j) {
 			swap(arr,i,j);
@@ -48,7 +61,7 @@ public class ShuffleArray {
 		}
 	}
 	
-	
+	// swap ith index and jth index element
 	private void swap(int[]arr,int i,int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
