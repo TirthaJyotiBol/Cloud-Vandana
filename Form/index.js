@@ -1,3 +1,5 @@
+// Get the variables of the input fields
+
 const f_name = document.getElementById('f-name');
 const l_name = document.getElementById('l-name');
 const email = document.getElementById('email');
@@ -10,6 +12,7 @@ const submitButton = document.getElementById('submit');
 const myForm = document.getElementById('form');
 
 
+// The variables for the output to be visible
 
 const nameOutput = document.getElementById('name-op');
 const lnameOp = document.getElementById('l-name-op');
@@ -22,11 +25,18 @@ const professionOp = document.getElementById('profession-op');
 
 
 
-
+// Form Validation
 myForm.addEventListener('submit',(e)=>{
 
+    // Prevention from submission
     e.preventDefault();
     
+    /*
+        - check condion credentials 
+        - if credential match then only check for the next credential
+        - if the current credential doesnot match or follow up then return from there only
+    */
+
     if(f_name.value.length<4 || f_name.value==null)
     {
         checkName();
@@ -40,7 +50,8 @@ myForm.addEventListener('submit',(e)=>{
 
 
     if(!checkEmail(email.value)){
-        document.getElementById('email-error').innerText="invalid email";
+        document.getElementById('email-error')
+        .innerText="invalid email";
             return;
     }
 
@@ -70,12 +81,15 @@ myForm.addEventListener('submit',(e)=>{
         checkMobile();
         return;
     }
+    
 
+    // seperate Function created for displaying the data of the form
     displayForm();
 
 });
 
 
+// reset button of the form
 resetButton.addEventListener('click',(e)=>{
     myForm.reset();
     window.location.href="index.html";
@@ -84,7 +98,8 @@ resetButton.addEventListener('click',(e)=>{
 
 
 
-
+//  Functions to check the credentiality 
+// These are the helper functions that are used in the form submission event
 function checkName(){
     document.getElementById('name-error')
     .innerText="First name should have a minimum of 4 chatacters";
@@ -132,8 +147,9 @@ function atLeastOneCheckboxIsChecked(){
 }
 
 
-function displayForm(){
 
+function displayForm()
+{
     document.getElementById('popup').style.display = 'block';
     nameOutput.innerText ="First Name : "+ f_name.value;
     lnameOp.innerText ="Last Name : "+ l_name.value;
@@ -151,12 +167,11 @@ function displayForm(){
             });
 
     genderOp.textContent = 'Gender : ' + selectedValues.join(', ');
-
-
 }
 
 
-
+//  reset the form 
+// since the button is created outside the form thus, form.reset() being used
 function reset(){
     myForm.reset();
     document.getElementById('popup').style.display = 'none';
