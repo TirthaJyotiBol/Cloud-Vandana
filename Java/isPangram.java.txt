@@ -4,6 +4,7 @@ public class isPangram {
 	
 	
 	// pangram for small letters are checked only
+	
 	// if needed to check for capital letters the  we need to make another frequency array for capital letters
 	// and check isAllPresent(small) && isAllPresent(capital)
 	
