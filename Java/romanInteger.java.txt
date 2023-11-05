@@ -3,6 +3,7 @@ package BigOh;
 public class romanInteger 
 
 {
+	// since collection framework is not used so a function is created to get the mapped value
 	private static int getMap(char ch){
         if(ch=='I') return 1;
         else if(ch=='V') return 5;
@@ -21,18 +22,29 @@ public class romanInteger
         int i=0;
         while(i<n){
             char ch = s.charAt(i);
+            
+            // Get the chearacter : check the correspondence possibilities
+            // if the values are besides then no worries simply add
+            
+            // I can either be followed with X or V
             if(i<n && i+1<n && s.charAt(i)=='I' && (s.charAt(i+1)=='X' || s.charAt(i+1)=='V') ){
                 sum+= getMap(s.charAt(i+1))-getMap(s.charAt(i));
                 i+=2;
             }
+            
+            // X can either be followed with L or C
             else if(i<n && i+1<n && s.charAt(i)=='X' && (s.charAt(i+1)=='L' || s.charAt(i+1)=='C')){
                 sum+= getMap(s.charAt(i+1))-getMap(s.charAt(i));
                 i+=2;
             }
+            
+            // C can either be followed with D or M
             else if(i<n && i+1<n && s.charAt(i)=='C' && (s.charAt(i+1)=='D' || s.charAt(i+1)=='M')){
                 sum+= getMap(s.charAt(i+1))-getMap(s.charAt(i));
                 i+=2;
             }
+            
+            // after the possibllities for normal way sinply add
             else{
                 if(i>=n) break;
                 sum+=getMap(s.charAt(i));
